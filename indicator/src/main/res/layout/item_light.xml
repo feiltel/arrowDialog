@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bgselect"
+    android:background="@drawable/bgselect_light"
     android:orientation="vertical">
 
     <TextView
@@ -15,12 +15,12 @@
         android:paddingRight="15dp"
         android:paddingTop="12dp"
         android:text="哈哈"
-        android:textColor="#FFF"
+        android:textColor="#000"
         android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:id="@+id/item_line"
-        android:background="#80FFFFFF" />
+        android:background="#4D000000" />
 </LinearLayout>

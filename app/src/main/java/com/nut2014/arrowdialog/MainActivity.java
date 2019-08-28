@@ -2,6 +2,8 @@ package com.nut2014.arrowdialog;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         new ShowUtils()
                 .setActivity(this)
                 .setClickView(v)
+                //.setLight(true)//设置成白色主题
                 .setIndicatorFloat(indicatorFloat)//箭头位置
                 // .setWidth(400)//设置窗口宽度
                 .setWindowOffset(0,0)//窗口偏移
@@ -48,4 +51,22 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.add_data) {
+            Toast.makeText(MainActivity.this, "POS" , Toast.LENGTH_SHORT).show();
+            showArrowDialog(findViewById(R.id.add_data),0.85f);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

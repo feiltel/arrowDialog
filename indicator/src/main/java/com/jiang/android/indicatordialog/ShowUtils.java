@@ -59,6 +59,13 @@ public class ShowUtils {
     private int windowOffsetY=5;
     private int gravityCenter = IndicatorBuilder.GRAVITY_RIGHT;
 
+    public ShowUtils setLight(boolean light) {
+        isLight = light;
+        return this;
+    }
+
+    private boolean isLight=false;
+
 
     public void showTopDialog(final OnItemSelectedListener onItemSelectedListener) {
         if (activity==null||clickView==null||mLists==null||mLists.length<1){
@@ -73,11 +80,12 @@ public class ShowUtils {
                 .height((int) (height * 0.5))
                 .height(-1)
                 .ArrowDirection(IndicatorBuilder.TOP)
-                .bgColor(Color.DKGRAY)
+                .bgColor(isLight?Color.WHITE:Color.DKGRAY)
+                .animator(R.style.dialog_exit)
                 .gravity(gravityCenter)
                 .dimEnabled(true)
                 .ArrowRectage(indicatorFloat)
-                .radius(18)
+                .radius(16)
                 .layoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false))
                 .adapter(new BaseAdapter() {
                     @Override
@@ -94,7 +102,7 @@ public class ShowUtils {
 
                     @Override
                     public int getLayoutID(int position) {
-                        return R.layout.item;
+                        return isLight?R.layout.item_light:R.layout.item;
                     }
 
                     @Override

@@ -18,4 +18,8 @@
     <style name="J_DIalog_Style_Dim_disable" parent="J_Dialog_Style">
 
     </style>
+    <style name="dialog_exit" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/in_translate_top</item>
+        <item name="android:windowExitAnimation">@anim/out_translate_top</item>
+    </style>
 </resources>
